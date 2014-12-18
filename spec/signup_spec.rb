@@ -56,6 +56,7 @@ describe Signup do
 
         result = signup.save
 
+        expect(logger).to have_received(:error).with("Email is already taken")
         expect(result).to be(false)
       end
     end
