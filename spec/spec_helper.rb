@@ -6,6 +6,10 @@ require "timecop"
 
 PROJECT_ROOT = File.expand_path("../..", __FILE__)
 
+Dir.glob(File.join(PROJECT_ROOT, "spec", "support", "*.rb")).each do |file|
+  require(file)
+end
+
 $LOAD_PATH << PROJECT_ROOT
 
 ActiveRecord::Base.establish_connection(
